@@ -11,8 +11,9 @@ object Layers extends App {
     val content = Source.fromFile(file).getLines.toList
 
     val words = content.flatMap(line => line.split(" "))
-    val counter = words.groupBy(w => w).values.map(w => (w.head, w.length))
-    print(counter)
+    val groupedWords = words.groupBy(w => w).values
+    val counter = groupedWords.map(w => (w.head, w.length))
+    counter.foreach(word => println(s"""Word: ${word._1} Count: ${word._2}"""))
   }
 
   def readFromFile(file: String): Try[List[String]] = Try {
