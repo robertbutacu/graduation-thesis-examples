@@ -1,6 +1,7 @@
 package ADTs
 
-import TreeOperations.TreeOp.TreeOps
+import PrettyPrinter.ops.PrettyPrinterOps
+
 object ADTs extends App {
   trait Tree[+A]
 
