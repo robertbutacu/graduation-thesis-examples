@@ -17,4 +17,6 @@ object ADTs extends App {
       Nill))
 
   tree.prettyPrinter()
+
+
 }
