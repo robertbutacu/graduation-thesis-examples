@@ -1,4 +1,4 @@
-package design.patterns
+package design.patterns.functors
 
 import scala.language.higherKinds
 
