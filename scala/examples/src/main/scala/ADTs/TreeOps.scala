@@ -12,6 +12,7 @@ trait TreeOps[T[_]] {
 object TreeOps {
 
   object ops {
+
     implicit class TreeOperations[A](t: Tree[A]) {
       def DFS(el: A): Option[List[A]] =
         TreeOps[Tree].DFS(t, el)
@@ -20,6 +21,7 @@ object TreeOps {
         TreeOps[Tree].commonAncestor(t, el1, el2)
       }
     }
+
   }
 
   def apply[A[_]](implicit sh: TreeOps[A]): TreeOps[A] = sh
@@ -45,13 +47,12 @@ object TreeOps {
     }
 
     override def commonAncestor[A](t: Tree[A], el1: A, el2: A): Option[A] = {
-      for {
+      def roads = for {
         firstDFS <- this.DFS(t, el1)
         secondDFS <- this.DFS(t, el2)
       } yield firstDFS.zip(secondDFS)
-        .takeWhile(e => e._1 == e._2)
-        .last
-        ._1
+
+      roads.map(r => r.takeWhile(e => e._1 == e._2).last._1)
     }
   }
 }
