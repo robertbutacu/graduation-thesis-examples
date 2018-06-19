@@ -19,6 +19,22 @@ public class Person {
         this.nationality = nationality;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public Nationality getNationality() {
+        return nationality;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
