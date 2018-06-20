@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public enum GiftType {
-    Nothing, Car, Toy, Booze, Error;
+    Nothing, Car, Toy, Drink, Error;
 
     public GiftType fromString(String from) {
         if (from.equalsIgnoreCase("nothing"))
@@ -19,7 +19,7 @@ public enum GiftType {
             return Toy;
 
         if (from.equalsIgnoreCase("booze"))
-            return Booze;
+            return Drink;
 
         return Error;
     }

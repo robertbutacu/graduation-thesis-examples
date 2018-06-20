@@ -20,8 +20,8 @@ public class Roulette {
 
     public Gift generateGift(GiftType gift) {
         switch (gift) {
-            case Booze:
-                return new Booze();
+            case Drink:
+                return new Drink();
             case Car:
                 return new Car();
             case Nothing:
